@@ -1,0 +1,15 @@
+.docs{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: aliceblue;
+    
+}
+ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}

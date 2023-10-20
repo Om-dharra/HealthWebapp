@@ -1,0 +1,25 @@
+.appointment{
+	background:#fff;
+	padding-top:100px;
+}
+h2{
+    text-align: center;
+}
+.form{
+    width: 80%;
+    position: relative;
+    left: 100px;
+}
+.sectiontitle{
+    position: relative;
+    left: 5%;
+    
+}
+.sectiontitle img{
+    position: relative;
+    left: 400px;
+}
+.sectiontitle p{
+    position: relative;
+    left:250px;
+}
