@@ -7,6 +7,8 @@ const Doctors=require("../models/Doctors");
 const Patient=require("../models/Patient");
 
 router.get('/doctors',async(req,res)=>{
+    console.log("Request received for /doctors");
+    console.log(req.body);
     try{
         let alldocs=await Doctors.find({});
         res.status(200).json(alldocs);
@@ -17,6 +19,8 @@ router.get('/doctors',async(req,res)=>{
 
 })
 router.post("/addtime",async (req,res)=>{
+    console.log("Request received for /addtime");
+    console.log(req.body);
     let {name,time}=req.body;
     
     let doc=await Doctors.findOne({name:name});
@@ -34,12 +38,16 @@ router.post("/addtime",async (req,res)=>{
         
 })
 router.post("/schedule",async (req,res)=>{
+    console.log("Request received for /schedule");
+    console.log(req.body);
     let {schedule}=req.body;
     const doc=Patient.findOneAndUpdate({name:"OM"},{timings:schedule});
 
 })
 
 router.post("/patient_Details",async (req,res)=>{
+    console.log("Request received for /patient_Details");
+    console.log(req.body);
     const { location, Pname, Page, Pcondition, Pgender }=req.body;
     const doc=Patient.find({fname:Pname});
     Patient.findByIdAndUpdate({location:location})
@@ -60,6 +68,8 @@ router.post("/patient_Details",async (req,res)=>{
     // });
 })
 router.get('/patient',async(req,res)=>{
+    console.log("Request received for /patient");
+    console.log(req.body);
     try{
         let alldocs=await Patient.find({name:'Om'});
         res.status(200).json(alldocs);

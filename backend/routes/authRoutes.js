@@ -5,6 +5,8 @@ const router=express.Router();
 const Patient=require("../models/Patient");
 
 router.post("/login", (req, res) => {
+    console.log("Request received for /login");
+    console.log(req.body);
     const { email, password } = req.body;
     //check email
     Patient.findOne({ email: email })
@@ -26,6 +28,8 @@ router.post("/login", (req, res) => {
   });
   
  router.post("/signup", (req, res) => {
+  console.log("Request received for /signup");
+    console.log(req.body);
     const { fname, lname, email, password } = req.body;
     //check email
     Patient.findOne({ email: email })
