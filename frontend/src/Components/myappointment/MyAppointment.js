@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import styles from './MyAppointment.module.css'
 import axios from 'axios';
 import Details from './Details';
+import { API_BASE_URL } from '../../constants';
 
 const MyAppointment = () => {
 
   let [patients,setpatient]=useState([]);
   async function getdoc() {
-    let res = await axios.get('http://localhost:8080/patient');
+    let res = await axios.get(`${API_BASE_URL}/patient`);
     console.log(res.data);
     setpatient(res.data);
   }

@@ -3,6 +3,7 @@ import basestyle from "../Base.module.css";
 import loginstyle from "./Login.module.css";
 import axios from "axios";
 import { useNavigate, NavLink } from "react-router-dom";
+import { API_BASE_URL } from "../../constants";
 const Login = () => {
   const navigate = useNavigate();
   const [formErrors, setFormErrors] = useState({});
@@ -45,7 +46,7 @@ const Login = () => {
   useEffect(() => {
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(user);
-      axios.post("http://localhost:8080/login", user).then((res) => {
+      axios.post(`${API_BASE_URL}/login`, user).then((res) => {
         alert(res.data.message);
         navigate("/", { replace: true });
       });

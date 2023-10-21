@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+import { API_BASE_URL } from '../../constants';
 // import { CDropdown,CDropdownToggle,CDropdownMenu,CDropdownItem } from '@coreui/react';
 
 const Bookings = () => {
@@ -17,7 +18,7 @@ const Bookings = () => {
   async function bookAppHandler(){
 
     try{
-      let res=await axios.post('http://localhost:8080/schedule',{selectedOptions});
+      let res=await axios.post(`${API_BASE_URL}/schedule`,{selectedOptions});
       console.log(res.data);
       
 

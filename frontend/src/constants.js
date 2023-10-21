@@ -1,0 +1,1 @@
+export const API_BASE_URL = 'https://healthcare-api-8fua.onrender.com';

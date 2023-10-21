@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import styles from './Feedback.module.css'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API_BASE_URL } from '../../constants';
 
 const Feedbackform = () => {
   let navigate=useNavigate();
@@ -14,7 +15,7 @@ const Feedbackform = () => {
     const name=Docname.current.value;
 
     try {
-      let res = axios.post('http://localhost:8080/addtime', { name,delay})
+      let res = axios.post(`${API_BASE_URL}/addtime`, { name,delay})
       navigate('/')
     }
     catch (e) {

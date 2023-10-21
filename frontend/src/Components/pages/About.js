@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Doctor from '../doctors/Doctor'
 import styles from './About.module.css'
+import { API_BASE_URL } from '../../constants'
 
 const About = () => {
     let [docs,setdocs]=useState([]);
     async function getdoc(){
-      let res=await axios.get('http://localhost:8080/doctors');
+      let res=await axios.get(`${API_BASE_URL}/doctors`);
       console.log(res.data);
       setdocs(res.data);
     }
