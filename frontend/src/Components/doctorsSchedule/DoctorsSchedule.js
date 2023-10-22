@@ -10,7 +10,7 @@ const DoctorsSchedule = () => {
     async function getdoc(){
       let res=await axios.get(`${API_BASE_URL}/docAppointment`);
       console.log(res.data);
-      setdocs(res.data);
+      setdocs([{"PatientName": "Om", "AppointmentTime": "1:00 PM", "Fees": "250"}, ...res.data]);
     }
     useEffect(()=>{
       getdoc();
