@@ -19,7 +19,8 @@ const pages = ['Home', 'Book Appointment', 'About'];
 const settings = ['Profile','Login','Logout'];
 
 
-function ResponsiveAppBar({setLoginUser}) {
+function ResponsiveAppBar({user, setLoginUser}) {
+  console.log("user: ", user);
   let navigate=useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -128,7 +129,9 @@ function ResponsiveAppBar({setLoginUser}) {
           
           <Link to='/feedback' className={styles.button}>Feedback</Link>
           <Link to='/myappointment' className={styles.button}>My Appointments</Link>
-          <Link to='/login' className={styles.button} onClick={() => setLoginUser({})}>Logout</Link>
+          <Link to='/login' className={styles.button}>
+            {Object.keys(user).length === 0? 'Login': 'Logout'} 
+          </Link>
           {/* {
             auth ? <li><Link to='/login' className={styles.button} onClick={logout}>Logout</Link></li>
             :<>

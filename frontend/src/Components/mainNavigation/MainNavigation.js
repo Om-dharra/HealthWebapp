@@ -1,10 +1,10 @@
 import React from 'react'
 import Navbar from './Navbar/Navbar'
 
-const MainNavigation = ({setLoginUser}) => {
+const MainNavigation = ({user, setLoginUser}) => {
   return (
     <div>
-      <Navbar setLoginUser={setLoginUser}/>
+      <Navbar user= {user} setLoginUser={setLoginUser}/>
     </div>
     
   )

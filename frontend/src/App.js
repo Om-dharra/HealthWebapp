@@ -23,7 +23,7 @@ const App = () => {
   const [ user, setLoginUser] = useState({})
   return (
     <Fragment>
-      <MainNavigation />
+      <MainNavigation user={user} setLoginUser={setLoginUser} />
       <main>
         <Routes>
         

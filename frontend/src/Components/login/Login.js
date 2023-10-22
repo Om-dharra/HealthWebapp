@@ -4,7 +4,7 @@ import loginstyle from "./Login.module.css";
 import axios from "axios";
 import { useNavigate, NavLink } from "react-router-dom";
 import { API_BASE_URL } from "../../constants";
-const Login = () => {
+const Login = ({setLoginUser}) => {
   const navigate = useNavigate();
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -12,7 +12,9 @@ const Login = () => {
     email: "",
     password: "",
   });
-
+  useEffect(() => {
+    setLoginUser({});
+  }, [setLoginUser]);
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setUserDetails({
@@ -38,6 +40,8 @@ const Login = () => {
     e.preventDefault();
     setFormErrors(validateForm(user));
     setIsSubmit(true);
+    setLoginUser(user);
+    navigate("/", { replace: true });
     // if (!formErrors) {
 
     // }
