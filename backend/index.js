@@ -39,7 +39,7 @@ const docRoutes=require("./routes/doctorRoutes");
 //middlewares 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(cors({origin:['http://localhost:3000']})) //for frontend react connection
+app.use(cors({origin:['http://localhost:3000', 'https://healthcare-app.netlify.app']})) //for frontend react connection
 
 app.use(session(sessionConfig));
 
