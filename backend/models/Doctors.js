@@ -8,7 +8,15 @@ const doctorSchema=new mongoose.Schema({
     ConsultationFee:Number,
     noOfFeedbacks:{type:Number,default:0},
     AverageWaitingTime:{type:Number,default:0},
-    appointments:{type:Number,default:0}
+    appointments:{type:Number,default:0},
+    Patients:[
+        {
+            Pname:{type:String,default:'Om'},
+            Page:{type:Number,default:20}
+
+        }
+
+    ]
     
 
 })

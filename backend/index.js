@@ -6,7 +6,7 @@ const cors=require('cors');
 const { mongoose } = require('mongoose');
 const session=require("express-session");
 const flash=require('connect-flash');
-const seedPDb=require('./seed2.js');
+const seedDDb=require('./seedDocAp')
 const seedDb=require('./seed.js');
 //mongoose connection cloud
 const uri='mongodb+srv://SIH_project:dtuheckers@cluster0.lbyqw96.mongodb.net/?retryWrites=true&w=majority'
@@ -52,11 +52,11 @@ app.get("/hello",(req,res)=>{
     res.status(200).json({msg:"Hi fitness enthusiast"});
 })
 // seedDb();
-seedPDb();
+// seedPDb();
+// seedDDb();
 //routes
 
 
 
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
-

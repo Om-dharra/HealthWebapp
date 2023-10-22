@@ -28,9 +28,9 @@ router.post("/login", (req, res) => {
   });
   
  router.post("/signup", (req, res) => {
-  console.log("Request received for /signup");
+    console.log("Request received for /signup");
     console.log(req.body);
-    const { fname, lname, email, password } = req.body;
+    const { nameemail, password } = req.body;
     //check email
     Patient.findOne({ email: email })
          .then((user) => {
@@ -53,7 +53,6 @@ router.post("/login", (req, res) => {
   });
 
 module.exports=router
-
 
 
 
