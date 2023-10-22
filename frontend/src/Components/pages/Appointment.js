@@ -40,7 +40,7 @@ const Appointment = () => {
     //     console.log("cannot book appointment at this moment")
 
     // }
-    navigate('/');
+    navigate('/payment');
   
 
     setValidated(true);

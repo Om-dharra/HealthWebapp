@@ -6,7 +6,7 @@ const Carousel_home = () => {
   return (
     <CCarousel controls indicators dark>
       <CCarouselItem>
-        <img className="d-block w-100" src="https://github.com/Om-dharra/healthcare/blob/main/slider2.jpg?raw=true" alt="slide 1" height="650px" />
+        <img className="d-block w-100" src="https://github.com/Om-dharra/web-dev/blob/main/slider2.jpg?raw=true" alt="slide 1" height="650px" />
         <CCarouselCaption className="d-none d-md-block" style={{position:'absolute',top:'200px',left:'0px'}}>
           <h5 style={{fontSize:'40px',fontFamily:'cursive'}}>Best Doctors Available</h5>
           <p style={{flexWrap:'wrap'}}>Trust is a vital component of the doctor-patient relationship.<br/> When trust is present, the patient is more likely to adhere to treatment recommendations.</p>
@@ -18,7 +18,7 @@ const Carousel_home = () => {
         
       </CCarouselItem>
       <CCarouselItem>
-        <img className="d-block w-100" src="https://github.com/Om-dharra/healthcare/blob/main/video-bg.jpg?raw=true" alt="slide 3" height="650px" />
+        <img className="d-block w-100" src="https://github.com/Om-dharra/web-dev/blob/main/video-bg.jpg?raw=true" alt="slide 3" height="650px" />
         <CCarouselCaption className="d-none d-md-block" style={{position:'absolute',top:'200px',left:'20px'}}>
           <h5 style={{fontSize:'40px',fontFamily:'cursive'}}>Advanced Quality Equipements</h5>
           <p>These devices often incorporate the latest technology and materials to ensure precise<br/> diagnostics, treatment, and patient care.</p>

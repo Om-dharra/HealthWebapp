@@ -26,7 +26,7 @@ const MyAppointment = () => {
           {
             patients.map((patient,index)=>{
               return <Details
-                    key={patient._id}
+                    key={index}
                     age={patient.age}
                     condition={patient.condition}
                     location={patient.location}

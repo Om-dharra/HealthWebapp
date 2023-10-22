@@ -1,27 +1,56 @@
-import React, { useRef } from 'react'
+import React, { useRef,useState,useEffect } from 'react'
 import styles from './Feedback.module.css'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { API_BASE_URL } from '../../constants';
 
+
 const Feedbackform = () => {
   let navigate=useNavigate();
   const TimeDelay=useRef();
   const Docname=useRef();
-  
   const formHandler=(e)=>{
     e.preventDefault();
-    const delay = TimeDelay.current.value;
+    navigate('/')
+  }
+  
+  const btnHandler=()=>{
+    
+    const delay = doc.current.value;
     const name=Docname.current.value;
 
     try {
       let res = axios.post(`${API_BASE_URL}/addtime`, { name,delay})
-      navigate('/')
+      
     }
-    catch (e) {
+    catch (err) {
       console.log("cannot update at this moment");
     }
   }
+  let [docs,setdocs]=useState([]);
+    async function getdoc(){
+      let res=await axios.get(`${API_BASE_URL}/doctors`);
+      console.log(res.data);
+      setdocs(res.data);
+    }
+    useEffect(()=>{
+      getdoc();
+    },[])
+    const doc=useRef();
+
+    function handler(){
+        for(let i=0;i<docs.length;i++){
+            
+            if(doc.current.value==docs[i].name.slice(0,3)){
+              doc.current.value=docs[i].name;
+              console.log(docs[i].name);
+              break;
+            }
+
+        }
+        
+    }
+
   return (
     <section>
       <form onSubmit={formHandler}>
@@ -31,7 +60,11 @@ const Feedbackform = () => {
             <input type="text" class="form-control" placeholder="Enter patient's name"/>
           </div>
           <div class="col">
-            <input type="text" class="form-control" placeholder="Enter doctors's name" ref={Docname}/>
+            <label>
+              Select Doctors: <input name="myInput" onChange={handler} ref={doc} />
+            </label>
+            
+          
           </div>
         </div>
         <div class="alert alert-primary" role="alert">
@@ -147,7 +180,7 @@ const Feedbackform = () => {
             </label>
           </div>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" onSubmit={btnHandler} class="btn btn-primary">Submit</button>
       </form>
 
     </section>

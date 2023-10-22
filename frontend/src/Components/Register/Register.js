@@ -32,9 +32,7 @@ const Register = () => {
     if (!values.fname) {
       error.fname = "First Name is required";
     }
-    if (!values.lname) {
-      error.lname = "Last Name is required";
-    }
+    
     if (!values.email) {
       error.email = "Email is required";
     } else if (!regex.test(values.email)) {
@@ -86,15 +84,7 @@ const Register = () => {
             value={user.fname}
           />
           <p className={basestyle.error}>{formErrors.fname}</p>
-          <input
-            type="text"
-            name="lname"
-            id="lname"
-            placeholder="Last Name"
-            onChange={changeHandler}
-            value={user.lname}
-          />
-          <p className={basestyle.error}>{formErrors.lname}</p>
+          
           <input
             type="email"
             name="email"
